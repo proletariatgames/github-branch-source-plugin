@@ -161,9 +161,9 @@ public class GitHubSCMSourceTest {
             byName.put(h.getKey().getName(), h.getKey());
             revByName.put(h.getKey().getName(), h.getValue());
         }
-        assertThat(byName.keySet(), containsInAnyOrder("PR-2", "master", "stephenc-patch-1"));
-        assertThat(byName.get("PR-2"), instanceOf(PullRequestSCMHead.class));
-        assertThat(revByName.get("PR-2"), is((SCMRevision) new PullRequestSCMRevision((PullRequestSCMHead)(byName.get("PR-2")),
+        assertThat(byName.keySet(), containsInAnyOrder("PR-master", "master", "stephenc-patch-1"));
+        assertThat(byName.get("PR-master"), instanceOf(PullRequestSCMHead.class));
+        assertThat(revByName.get("PR-master"), is((SCMRevision) new PullRequestSCMRevision((PullRequestSCMHead)(byName.get("PR-master")),
                 "8f1314fc3c8284d8c6d5886d473db98f2126071c",
                 "c0e024f89969b976da165eecaa71e09dc60c3da1"
         )));
@@ -197,9 +197,9 @@ public class GitHubSCMSourceTest {
             byName.put(h.getKey().getName(), h.getKey());
             revByName.put(h.getKey().getName(), h.getValue());
         }
-        assertThat(byName.keySet(), containsInAnyOrder("PR-2", "master", "stephenc-patch-1"));
-        assertThat(byName.get("PR-2"), instanceOf(PullRequestSCMHead.class));
-        assertThat(revByName.get("PR-2"), is((SCMRevision) new PullRequestSCMRevision((PullRequestSCMHead)(byName.get("PR-2")),
+        assertThat(byName.keySet(), containsInAnyOrder("PR-master", "master", "stephenc-patch-1"));
+        assertThat(byName.get("PR-master"), instanceOf(PullRequestSCMHead.class));
+        assertThat(revByName.get("PR-master"), is((SCMRevision) new PullRequestSCMRevision((PullRequestSCMHead)(byName.get("PR-master")),
                 "8f1314fc3c8284d8c6d5886d473db98f2126071c",
                 "c0e024f89969b976da165eecaa71e09dc60c3da1"
         )));

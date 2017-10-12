@@ -302,14 +302,14 @@ public class PullRequestGHEventSubscriber extends GHEventsSubscriber {
                 }
             }
             if (context.wantPRs()) {
-                int number = pullRequest.getNumber();
+                //int number = pullRequest.getNumber();
                 Set<ChangeRequestCheckoutStrategy> strategies = fork ? context.forkPRStrategies() : context.originPRStrategies();
                 for (ChangeRequestCheckoutStrategy strategy: strategies) {
                     final String branchName;
                     if (strategies.size() == 1) {
-                        branchName = "PR-" + number;
+                        branchName = "PR-" + ghPullRequest.getHead().getRef();
                     } else {
-                        branchName = "PR-" + number + "-" + strategy.name().toLowerCase(Locale.ENGLISH);
+                        branchName = "PR-" + ghPullRequest.getHead().getRef() + "-" + strategy.name().toLowerCase(Locale.ENGLISH);
                     }
                     PullRequestSCMHead head;
                     PullRequestSCMRevision revision;

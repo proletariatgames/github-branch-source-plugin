@@ -910,9 +910,9 @@ public class GitHubSCMSource extends AbstractGitSCMSource {
                             for (final ChangeRequestCheckoutStrategy strategy : strategies.get(fork)) {
                                 final String branchName;
                                 if (strategies.get(fork).size() == 1) {
-                                    branchName = "PR-" + number;
+                                    branchName = "PR-" + pr.getHead().getRef();
                                 } else {
-                                    branchName = "PR-" + number + "-" + strategy.name().toLowerCase(Locale.ENGLISH);
+                                    branchName = "PR-" + pr.getHead().getRef() + "-" + strategy.name().toLowerCase(Locale.ENGLISH);
                                 }
                                 count++;
                                 if (request.process(new PullRequestSCMHead(
